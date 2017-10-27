@@ -6,7 +6,12 @@ This is a docker container running vs code for a ReasonML Workshop at reactive c
 Usage
 ==
 ```
-docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY -v $HOME/.Xauthority:/home/vscode/.Xauthority --net=host --device /dev/dri gidsi/vs-reasonml /bin/bash
+docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY -v $HOME/.Xauthority:/home/vscode/.Xauthority --net=host --device /dev/dri --name vs-reasonml gidsi/vs-reasonml /bin/bash
+```
+
+To start another terminal simply run:
+```
+docker exec -it vs-reasonml /bin/bash
 ```
 
 I haven't stripped the command so far to what is really needed, so far it works for me.
